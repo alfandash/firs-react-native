@@ -16,10 +16,13 @@ import { StackNavigator } from 'react-navigation'
 import WelcomePage from './src-android/WelcomePage'
 import MainScreen from './src-android/MainScreen'
 import NewsCard from './src-android/NewsCard'
+import DetailScreen from './src-android/DetailScreen'
 
 const AwesomeProject = StackNavigator({
   Welcome: { screen: WelcomePage, navigationOptions: { header: null }},
   MainScreen: { screen: MainScreen, navigationOptions: { header: null }},
+  DetailScreen: { screen: DetailScreen, navigationOptions: {
+    header: null }}
   // NewsCard: { screen: NewsCard, navigationOptions: { header: null } }
 })
 

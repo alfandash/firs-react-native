@@ -31,7 +31,7 @@ export default class NewsCard extends Component {
               <Text>
                 {this.props.item.title}
               </Text>
-              <Button block onPress={() => this.props.navigation.navigate('Welcome')}>
+              <Button block onPress={() => this.props.navigation.navigate('DetailScreen',{data: this.props.item})}>
                 <Text>Detail</Text>
               </Button>
             </Body>

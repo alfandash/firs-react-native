@@ -156,7 +156,7 @@ var NewsCard = _wrapComponent('NewsCard')(function (_Component) {
               _react3.default.createElement(
                 _nativeBase.Button,
                 { block: true, onPress: function onPress() {
-                    return _this2.props.navigation.navigate('Welcome');
+                    return _this2.props.navigation.navigate('DetailScreen', { data: _this2.props.item });
                   }, __source: {
                     fileName: _jsxFileName,
                     lineNumber: 34

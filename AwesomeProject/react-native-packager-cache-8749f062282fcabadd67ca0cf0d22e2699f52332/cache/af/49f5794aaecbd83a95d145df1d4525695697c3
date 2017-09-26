@@ -22,11 +22,17 @@ var _NewsCard = require('./src-android/NewsCard');
 
 var _NewsCard2 = _interopRequireDefault(_NewsCard);
 
+var _DetailScreen = require('./src-android/DetailScreen');
+
+var _DetailScreen2 = _interopRequireDefault(_DetailScreen);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AwesomeProject = (0, _reactNavigation.StackNavigator)({
   Welcome: { screen: _WelcomePage2.default, navigationOptions: { header: null } },
-  MainScreen: { screen: _MainScreen2.default, navigationOptions: { header: null } }
+  MainScreen: { screen: _MainScreen2.default, navigationOptions: { header: null } },
+  DetailScreen: { screen: _DetailScreen2.default, navigationOptions: {
+      header: null } }
 });
 
 exports.default = AwesomeProject;
