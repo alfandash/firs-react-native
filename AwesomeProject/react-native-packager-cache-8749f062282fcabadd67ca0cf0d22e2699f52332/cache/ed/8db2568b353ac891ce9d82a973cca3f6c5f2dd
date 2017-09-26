@@ -1,0 +1,257 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./../node_modules/react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class,
+    _temp,
+    _jsxFileName = '/home/alfandash/Dropbox/phase3/firs-react-native/AwesomeProject/src-android/MainScreen.js';
+
+var _axios = require('axios');
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _reactNative = require('react-native');
+
+var _reactNavigation = require('react-navigation');
+
+var _nativeBase = require('native-base');
+
+var _NewsCard = require('./NewsCard');
+
+var _NewsCard2 = _interopRequireDefault(_NewsCard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  MainScreen: {
+    displayName: 'MainScreen'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/home/alfandash/Dropbox/phase3/firs-react-native/AwesomeProject/src-android/MainScreen.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var MainScreen = _wrapComponent('MainScreen')((_temp = _class = function (_Component) {
+  _inherits(MainScreen, _Component);
+
+  function MainScreen(props) {
+    _classCallCheck(this, MainScreen);
+
+    var _this = _possibleConstructorReturn(this, (MainScreen.__proto__ || Object.getPrototypeOf(MainScreen)).call(this, props));
+
+    _this.state = {
+      listNews: []
+    };
+    return _this;
+  }
+
+  _createClass(MainScreen, [{
+    key: 'getListNews',
+    value: function getListNews() {
+      var _this2 = this;
+
+      _axios2.default.get('https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=606e524659524a41a1a759ac9dfd08a6').then(function (response) {
+        var listNewsApi = response.data.articles;
+        _this2.setState({
+          listNews: listNewsApi
+        });
+        console.log('list news', _this2.state.listNews);
+      }).catch(function (error) {
+        console.log('Error fetching and parsing data', error);
+      });
+    }
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      console.log('masuk');
+      this.getListNews();
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      var goBack = this.props.navigation.goBack;
+
+      return _react3.default.createElement(
+        _nativeBase.Container,
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 49
+          }
+        },
+        _react3.default.createElement(
+          _nativeBase.Header,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 50
+            }
+          },
+          _react3.default.createElement(
+            _nativeBase.Left,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 51
+              }
+            },
+            _react3.default.createElement(
+              _nativeBase.Button,
+              { transparent: true, onPress: function onPress() {
+                  return goBack();
+                }, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 52
+                }
+              },
+              _react3.default.createElement(_nativeBase.Icon, { name: 'arrow-back', __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 53
+                }
+              })
+            )
+          ),
+          _react3.default.createElement(
+            _nativeBase.Body,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 56
+              }
+            },
+            _react3.default.createElement(
+              _nativeBase.Title,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 57
+                }
+              },
+              'News in Palm'
+            )
+          ),
+          _react3.default.createElement(_nativeBase.Right, {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 59
+            }
+          })
+        ),
+        _react3.default.createElement(
+          _nativeBase.Content,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 61
+            }
+          },
+          _react3.default.createElement(_reactNative.FlatList, { data: this.state.listNews,
+            renderItem: function renderItem(_ref) {
+              var item = _ref.item;
+              return _react3.default.createElement(_NewsCard2.default, { item: item, navigation: _this3.props.navigation, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 64
+                }
+              });
+            }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 62
+            }
+          })
+        ),
+        _react3.default.createElement(
+          _nativeBase.Footer,
+          {
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 67
+            }
+          },
+          _react3.default.createElement(
+            _nativeBase.FooterTab,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 68
+              }
+            },
+            _react3.default.createElement(
+              _nativeBase.Button,
+              { full: true, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 69
+                }
+              },
+              _react3.default.createElement(
+                _nativeBase.Text,
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 70
+                  }
+                },
+                'Footer'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return MainScreen;
+}(_react2.Component), _class.navigationOptions = {
+  title: 'Welcome',
+  header: null
+}, _temp));
+
+exports.default = MainScreen;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    margin: 20,
+    marginBottom: 5
+  }
+});

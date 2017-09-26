@@ -1,0 +1,56 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactNative = require('react-native');
+
+var _reactNavigation = require('react-navigation');
+
+var _WelcomePage = require('./src-android/WelcomePage');
+
+var _WelcomePage2 = _interopRequireDefault(_WelcomePage);
+
+var _MainScreen = require('./src-android/MainScreen');
+
+var _MainScreen2 = _interopRequireDefault(_MainScreen);
+
+var _NewsCard = require('./src-android/NewsCard');
+
+var _NewsCard2 = _interopRequireDefault(_NewsCard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var AwesomeProject = (0, _reactNavigation.StackNavigator)({
+  Welcome: { screen: _WelcomePage2.default, navigationOptions: { header: null } },
+  MainScreen: { screen: _MainScreen2.default, navigationOptions: { header: null } }
+});
+
+exports.default = AwesomeProject;
+
+
+var styles = _reactNative.StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#333333',
+    marginBottom: 5
+  }
+});
+
+_reactNative.AppRegistry.registerComponent('AwesomeProject', function () {
+  return AwesomeProject;
+});

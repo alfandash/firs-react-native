@@ -1,0 +1,186 @@
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react2 = require('react');
+
+var _react3 = _interopRequireDefault(_react2);
+
+var _index = require('./../node_modules/react-transform-hmr/lib/index.js');
+
+var _index2 = _interopRequireDefault(_index);
+
+var _jsxFileName = '/home/alfandash/Dropbox/phase3/firs-react-native/AwesomeProject/src-android/NewsCard.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _reactNative = require('react-native');
+
+var _reactNavigation = require('react-navigation');
+
+var _nativeBase = require('native-base');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _components = {
+  NewsCard: {
+    displayName: 'NewsCard'
+  }
+};
+
+var _node_modulesReactTransformHmrLibIndexJs2 = (0, _index2.default)({
+  filename: '/home/alfandash/Dropbox/phase3/firs-react-native/AwesomeProject/src-android/NewsCard.js',
+  components: _components,
+  locals: [module],
+  imports: [_react3.default]
+});
+
+function _wrapComponent(id) {
+  return function (Component) {
+    return _node_modulesReactTransformHmrLibIndexJs2(Component, id);
+  };
+}
+
+var NewsCard = _wrapComponent('NewsCard')(function (_Component) {
+  _inherits(NewsCard, _Component);
+
+  function NewsCard(props) {
+    _classCallCheck(this, NewsCard);
+
+    return _possibleConstructorReturn(this, (NewsCard.__proto__ || Object.getPrototypeOf(NewsCard)).call(this, props));
+  }
+
+  _createClass(NewsCard, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react3.default.createElement(
+        _reactNative.View,
+        {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
+          }
+        },
+        _react3.default.createElement(
+          _nativeBase.Card,
+          { style: { flex: 0 }, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 18
+            }
+          },
+          _react3.default.createElement(
+            _nativeBase.CardItem,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 19
+              }
+            },
+            _react3.default.createElement(
+              _nativeBase.Left,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 20
+                }
+              },
+              _react3.default.createElement(
+                _nativeBase.Body,
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 22
+                  }
+                },
+                _react3.default.createElement(
+                  _nativeBase.Text,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 23
+                    }
+                  },
+                  this.props.item.author
+                ),
+                _react3.default.createElement(
+                  _nativeBase.Text,
+                  { note: true, __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 24
+                    }
+                  },
+                  Date(this.props.item.publishedAt)
+                )
+              )
+            )
+          ),
+          _react3.default.createElement(
+            _nativeBase.CardItem,
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 28
+              }
+            },
+            _react3.default.createElement(
+              _nativeBase.Body,
+              {
+                __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 29
+                }
+              },
+              _react3.default.createElement(_reactNative.Image, { source: { uri: '' + this.props.item.urlToImage }, style: { height: 200, width: '100%', flex: 1 }, __source: {
+                  fileName: _jsxFileName,
+                  lineNumber: 30
+                }
+              }),
+              _react3.default.createElement(
+                _nativeBase.Text,
+                {
+                  __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 31
+                  }
+                },
+                this.props.item.title
+              ),
+              _react3.default.createElement(
+                _nativeBase.Button,
+                { block: true, onPress: function onPress() {
+                    return _this2.props.navigation.navigate('Welcome');
+                  }, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 34
+                  }
+                },
+                _react3.default.createElement(
+                  _nativeBase.Text,
+                  {
+                    __source: {
+                      fileName: _jsxFileName,
+                      lineNumber: 35
+                    }
+                  },
+                  'Detail'
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return NewsCard;
+}(_react2.Component));
+
+exports.default = NewsCard;
